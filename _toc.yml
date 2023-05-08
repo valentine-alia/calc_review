@@ -8,3 +8,4 @@ chapters:
 - file: notebooks
 - file: markdown-notebooks
 - file: notebooks/mymarkdownfile.md
+- file: notebooks/thisguy.ipynb
