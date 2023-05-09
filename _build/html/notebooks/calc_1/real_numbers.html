@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Real Numbers &#8212; My sample book</title>
+    <title>Real Numbers &#8212; Everything you Should Have Learned in Calculus</title>
   
   
   
@@ -59,6 +59,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/calc_1/real_numbers';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -150,7 +152,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Welcome to your Jupyter Book
+                    Everything you Should Have Learned in Calculus
                 </a>
             </li>
         </ul>
@@ -359,7 +361,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -375,6 +379,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounds">Bounds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervals">Intervals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#triangle-inequality">Triangle Inequality</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -386,6 +400,36 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="real-numbers">
 <h1>Real Numbers<a class="headerlink" href="#real-numbers" title="Permalink to this headline">#</a></h1>
+<p>The real numbers are the set of all positive and negative numbers, as well as 0. We denote it as <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. One can <a class="reference external" href="https://sites.math.washington.edu//~toro/Courses/09-10/524/construction-reals.pdf">Construct the Reals</a>, but its a bit technical and a physics major will (probably) never need to see that so I won’t go through that here.</p>
+<p>Things you can do with real numbers: Add, Subtract, Multiply, Divide (except by 0), and compare (for 2 real numbers one must be greater than the other OR they are equal). All of the typical algebraic rules apply to real numbers.</p>
+<p>Things you can’t do: Divide by 0, take square roots of negative numbers.</p>
+<p>Another useful thing to note is that for two real numbers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, if <span class="math notranslate nohighlight">\(a\geq b\)</span> and <span class="math notranslate nohighlight">\(a \leq b\)</span> then <span class="math notranslate nohighlight">\(a=b\)</span>.</p>
+<div class="section" id="bounds">
+<h2>Bounds<a class="headerlink" href="#bounds" title="Permalink to this headline">#</a></h2>
+<p>For a subset <span class="math notranslate nohighlight">\(\mathcal{Y}\subset \mathbb{R}\)</span>, an <strong>Upper-Bound</strong> of <span class="math notranslate nohighlight">\(\mathcal{Y}\)</span> is some <span class="math notranslate nohighlight">\(b\in \mathbb{R}\)</span> satisfying <span class="math notranslate nohighlight">\(x\leq b\)</span> for all <span class="math notranslate nohighlight">\(x \in \mathcal{Y}\)</span>. If this <span class="math notranslate nohighlight">\(b\)</span> exists, we say <span class="math notranslate nohighlight">\(\mathcal{Y}\)</span> is <strong>bounded above</strong>.</p>
+<p>For a subset <span class="math notranslate nohighlight">\(\mathcal{Y}\subset \mathbb{R}\)</span>, a <strong>Lower-Bound</strong> of <span class="math notranslate nohighlight">\(\mathcal{Y}\)</span> is some <span class="math notranslate nohighlight">\(b\in \mathbb{R}\)</span> satisfying <span class="math notranslate nohighlight">\(x\geq b\)</span> for all <span class="math notranslate nohighlight">\(x \in \mathcal{Y}\)</span> If this <span class="math notranslate nohighlight">\(b\)</span> exists, we say <span class="math notranslate nohighlight">\(\mathcal{Y}\)</span> is <strong>bounded below</strong>.</p>
+<p>The real numbers have the property that any subset <span class="math notranslate nohighlight">\(\mathcal{Y}\subset \mathbb{R}\)</span> that is bounded above has a <strong>least upper bound</strong>.</p>
+</div>
+<div class="section" id="intervals">
+<h2>Intervals<a class="headerlink" href="#intervals" title="Permalink to this headline">#</a></h2>
+<p>For <span class="math notranslate nohighlight">\(a,b\in\mathbb{R}\)</span> satisfying <span class="math notranslate nohighlight">\(a&lt;b\)</span>, we call the following sets <strong>Intervals</strong>.</p>
+<div class="math notranslate nohighlight">
+\[(a,b) := \{x\in\mathbb{R}: a&lt;x&lt;b \} \hspace{1cm} [a,b] := \{x\in\mathbb{R}: a\leq x \leq b \}\]</div>
+<div class="math notranslate nohighlight">
+\[(a,b] := \{x\in\mathbb{R}: a&lt;x\leq b \} \hspace{1cm} [a,b) := \{x\in\mathbb{R}: a\leq x &lt; b \}\]</div>
+<div class="math notranslate nohighlight">
+\[(a,\infty] := \{x\in\mathbb{R}: a&lt;x \} \hspace{1cm} [a,\infty) := \{x\in\mathbb{R}: a\leq x \}\]</div>
+<div class="math notranslate nohighlight">
+\[(-\infty,b] := \{x\in\mathbb{R}: x&lt;b \} \hspace{1cm} (-\infty,b] := \{x\in\mathbb{R}: x \leq b \}\]</div>
+</div>
+<div class="section" id="triangle-inequality">
+<h2>Triangle Inequality<a class="headerlink" href="#triangle-inequality" title="Permalink to this headline">#</a></h2>
+<p>This doesen’t come up in physics <em>that</em> often, but is still useful to know, The triangle inequality for real numbers states:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{for a, b } \in \mathbb{R}, \space  |a| + |b| \geq |a + b|
+\]</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -447,6 +491,22 @@ document.write(`
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounds">Bounds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervals">Intervals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#triangle-inequality">Triangle Inequality</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -456,7 +516,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Alia Valentine
 </p>
 
   </div>
