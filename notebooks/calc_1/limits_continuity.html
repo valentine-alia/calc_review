@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/calc_1/limits_continuity';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Derivatives and the Chain Rule" href="derivatives_chain_rule.html" />
+    <link rel="next" title="Derivatives" href="derivatives_chain_rule.html" />
     <link rel="prev" title="Real Numbers" href="real_numbers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -161,7 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="notation.html">Notation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="real_numbers.html">Real Numbers</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Limits and Continuity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="derivatives_chain_rule.html">Derivatives and the Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivatives_chain_rule.html">Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_palooza.html">Function Palooza</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Calc 2</span></p>
 <ul class="nav bd-sidenav">
@@ -435,8 +436,8 @@ document.write(`
 <div class="section" id="limits-of-other-functions">
 <h2>Limits of other functions<a class="headerlink" href="#limits-of-other-functions" title="Permalink to this headline">#</a></h2>
 <p>For functions <span class="math notranslate nohighlight">\(f:S\to \mathbb{R}\)</span>, we can think of limits of the value of the function as x approaches some <span class="math notranslate nohighlight">\(x \in S\)</span> There are two ways that we can think of definining limits rigorously. The first is the formal <span class="math notranslate nohighlight">\(\varepsilon\)</span>-<span class="math notranslate nohighlight">\(\delta\)</span> definition which mimics the definition of convergence we’ve seen already. But in practice, that definition is not often used, so I’ll give the second version:</p>
-<p><strong>Theorem</strong> Let <span class="math notranslate nohighlight">\(f:S\to \mathbb{R}\)</span> be a function with <span class="math notranslate nohighlight">\(S\subset \mathbb{R}\)</span>, and let <span class="math notranslate nohighlight">\(x_0 \in S\)</span>, and let <span class="math notranslate nohighlight">\(y_0\in \mathbb{R}\)</span>. Then <span class="math notranslate nohighlight">\(\lim_{x\to x_0}f(x) = y_0\)</span> if and only if for every sequence <span class="math notranslate nohighlight">\((x_n)_{n\in\mathbb{N}} \subset S \setminus {x_0}\)</span> converging to <span class="math notranslate nohighlight">\(x_0\)</span> one has that <span class="math notranslate nohighlight">\((f(x_n))_{n\in\mathbb{N}}\)</span> convergest to <span class="math notranslate nohighlight">\(y_0\)</span>.</p>
-<p>This essentially is saying that if you use a convergent sequence that convergest to <span class="math notranslate nohighlight">\(x_0\)</span> as an imput for a function, the corresponding output sequence converges to the limit of the function.</p>
+<p><strong>Theorem</strong> Let <span class="math notranslate nohighlight">\(f:S\to \mathbb{R}\)</span> be a function with <span class="math notranslate nohighlight">\(S\subset \mathbb{R}\)</span>, and let <span class="math notranslate nohighlight">\(x_0 \in S\)</span>, and let <span class="math notranslate nohighlight">\(y_0\in \mathbb{R}\)</span>. Then <span class="math notranslate nohighlight">\(\lim_{x\to x_0}f(x) = y_0\)</span> if and only if for every sequence <span class="math notranslate nohighlight">\((x_n)_{n\in\mathbb{N}} \subset S \setminus \{x_0\}\)</span> converging to <span class="math notranslate nohighlight">\(x_0\)</span> one has that <span class="math notranslate nohighlight">\((f(x_n))_{n\in\mathbb{N}}\)</span> convergest to <span class="math notranslate nohighlight">\(y_0\)</span>.</p>
+<p>This essentially is saying that if you use a convergent sequence that converges to <span class="math notranslate nohighlight">\(x_0\)</span> as an imput for a function, the corresponding output sequence converges to the limit of the function.</p>
 <div class="section" id="trick-for-finding-limits-of-rational-functions">
 <h3>Trick for finding limits of rational functions<a class="headerlink" href="#trick-for-finding-limits-of-rational-functions" title="Permalink to this headline">#</a></h3>
 <p>Let’s say you want to find the limit of the funciton <span class="math notranslate nohighlight">\(f(x) = \frac{1 - 3x^2 + 3x^3}{x^3 -4x^2 -4}\)</span> as <span class="math notranslate nohighlight">\(x\to \infty\)</span>. Graphing the function, we can see that the limit should end up being <span class="math notranslate nohighlight">\(3\)</span>:</p>
@@ -465,7 +466,7 @@ f(x) = \frac{ \frac{1}{x^3}( 1 - 3x^2 + 3x^3)}{\frac{1}{x^3}( x^3 -4x^2 -4)} = \
 <div class="section" id="continuity">
 <h2>Continuity<a class="headerlink" href="#continuity" title="Permalink to this headline">#</a></h2>
 <p>Most of the functions of interest in physics are <strong>continuous</strong>, or are at least mostly continuous. Intuitively, a function being continuous means that you can draw it without picking up your writing utensil.</p>
-<p>Lets consider the function <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> that is defined on <span class="math notranslate nohighlight">\(\mathbb{R}\setminus {0}\)</span>. This function looks like this:</p>
+<p>Lets consider the function <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> that is defined on <span class="math notranslate nohighlight">\(\mathbb{R}\setminus \{0\}\)</span>. This function looks like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.05</span><span class="p">);</span><span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span>
@@ -481,7 +482,7 @@ f(x) = \frac{ \frac{1}{x^3}( 1 - 3x^2 + 3x^3)}{\frac{1}{x^3}( x^3 -4x^2 -4)} = \
 </div>
 <p>We can see that this function is continuous except at 0, where it isn’t even defined.</p>
 <p>We are still lacking a solid definition of continuity. There is again a <span class="math notranslate nohighlight">\(\varepsilon\)</span> <span class="math notranslate nohighlight">\(\delta\)</span> formulation of this definition, but I’ll just give a more practical practical definition:</p>
-<p><strong>Def.</strong> Let <span class="math notranslate nohighlight">\(f: S\to \mathbb{R}\)</span> with <span class="math notranslate nohighlight">\(S\subset\mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(x_0\in S\)</span>. f is continuous at <span class="math notranslate nohighlight">\(x_0\)</span> if and only if:</p>
+<p><strong>Def.</strong> Let <span class="math notranslate nohighlight">\(f: S\to \mathbb{R}\)</span> with <span class="math notranslate nohighlight">\(S\subset\mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(x_0\in S\)</span>. <span class="math notranslate nohighlight">\(f\)</span> is continuous at <span class="math notranslate nohighlight">\(x_0\)</span> if and only if:</p>
 <div class="math notranslate nohighlight">
 \[\lim_{x\to x_0}f(x) = f(x_0).\]</div>
 <p>This is saying that if the limit of the function and its actual value at a point are the same, then the function is continuous at that point.</p>
@@ -533,7 +534,7 @@ f(x) = \frac{ \frac{1}{x^3}( 1 - 3x^2 + 3x^3)}{\frac{1}{x^3}( x^3 -4x^2 -4)} = \
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Derivatives and the Chain Rule</p>
+        <p class="prev-next-title">Derivatives</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Derivatives and the Chain Rule &#8212; Everything you Should Have Learned in Calculus</title>
+    <title>Derivatives &#8212; Everything you Should Have Learned in Calculus</title>
   
   
   
@@ -59,10 +59,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/calc_1/derivatives_chain_rule';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Differentiation vs Integration" href="../calc_2/diff_vs_int.html" />
+    <link rel="next" title="Function Palooza" href="function_palooza.html" />
     <link rel="prev" title="Limits and Continuity" href="limits_continuity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -159,7 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="notation.html">Notation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="real_numbers.html">Real Numbers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="limits_continuity.html">Limits and Continuity</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Derivatives and the Chain Rule</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_palooza.html">Function Palooza</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Calc 2</span></p>
 <ul class="nav bd-sidenav">
@@ -359,7 +362,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -370,11 +375,26 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Derivatives and the Chain Rule</h1>
+    <h1>Derivatives</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-derivatives">Calculating Derivatives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity-of-the-derivative">Linearity of the Derivative</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#product-rule">Product Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">Chain Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-rule">Power Rule</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -384,8 +404,69 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="derivatives-and-the-chain-rule">
-<h1>Derivatives and the Chain Rule<a class="headerlink" href="#derivatives-and-the-chain-rule" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="derivatives">
+<h1>Derivatives<a class="headerlink" href="#derivatives" title="Permalink to this headline">#</a></h1>
+<div class="section" id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">#</a></h2>
+<p>The next step from limits of functions is derivatives. Here I’ll jump right into the formal definition:</p>
+<p><strong>Def.</strong> Let <span class="math notranslate nohighlight">\(f: (a,b)\to \mathbb{R}\)</span> be a function. We say <span class="math notranslate nohighlight">\(f\)</span> is <strong>differentiable at <span class="math notranslate nohighlight">\(x_0\)</span></strong> if the following limit exists:</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x_0) = \lim_{x\to x_0}\frac{f(x_0)- f(x)}{x_0 - x}
+\]</div>
+<p>We call <span class="math notranslate nohighlight">\(f'(x_0)\)</span> the <strong>derivative of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x_0\)</span></strong>. If this limit exists for all <span class="math notranslate nohighlight">\(x_0 \in (a,b)\)</span>, we say <span class="math notranslate nohighlight">\(f\)</span> is <strong>differentiable</strong>. In that case, the function <span class="math notranslate nohighlight">\(f':(a,b) \to \mathbb{R}\)</span> is called the <strong>derivative</strong> of <span class="math notranslate nohighlight">\(f\)</span> and is denoted: <span class="math notranslate nohighlight">\(f' = \frac{d}{dx}(f) = \frac{df}{dx}\)</span>. We also call <span class="math notranslate nohighlight">\(\frac{d}{dx}\)</span> a <strong>differential operator</strong>.</p>
+<p>Note that differentiablility is stronger than continuity. <span class="math notranslate nohighlight">\(f\)</span> is differentiable <span class="math notranslate nohighlight">\(\implies\)</span> <span class="math notranslate nohighlight">\(f\)</span> is continuous, but not the other way. <span class="math notranslate nohighlight">\(f\)</span> being continuous does not imply that <span class="math notranslate nohighlight">\(f\)</span> is differntiable.</p>
+<p>As you know, the derivative of a function tells you the slope of the original function. This has an immense amount of uses, as you are no doubt already aware.</p>
+</div>
+<div class="section" id="calculating-derivatives">
+<h2>Calculating Derivatives<a class="headerlink" href="#calculating-derivatives" title="Permalink to this headline">#</a></h2>
+<p>When actually calculating derivatives in practice, you memorize the derivatives of a few key functions (see “function_palooza”) and the rules for calculating producrs and compositions of functions, which I’ll put below.</p>
+<div class="section" id="linearity-of-the-derivative">
+<h3>Linearity of the Derivative<a class="headerlink" href="#linearity-of-the-derivative" title="Permalink to this headline">#</a></h3>
+<p><strong>Theorem</strong> Let <span class="math notranslate nohighlight">\(f,g : (a,b): \to \mathbb{R}\)</span> be differentiable at <span class="math notranslate nohighlight">\(x_0 \in (a,b)\)</span> and let <span class="math notranslate nohighlight">\(\alpha \in \mathbb{R}\)</span>.Then:</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha(f + g)'(x_0) = \alpha f'(x_0) + \alpha g'(x_0)
+\]</div>
+<p>Ignoring specification of <span class="math notranslate nohighlight">\(x_0\)</span> and using Leibinz notation, we can write this as:</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha \frac{d}{dx}(f + g) = \alpha \frac{df}{dx} + \alpha\frac{dg}{dx}
+\]</div>
+</div>
+<div class="section" id="product-rule">
+<h3>Product Rule<a class="headerlink" href="#product-rule" title="Permalink to this headline">#</a></h3>
+<p><strong>Theorem</strong> Let <span class="math notranslate nohighlight">\(f,g : (a,b): \to \mathbb{R}\)</span> be differentiable at <span class="math notranslate nohighlight">\(x_0 \in (a,b)\)</span>. Then <span class="math notranslate nohighlight">\(fg\)</span> is differentiable at <span class="math notranslate nohighlight">\(x_0\)</span> with:</p>
+<div class="math notranslate nohighlight">
+\[
+(fg)'(x_0) = f'(x_0)g(x_0) + f(x_0)g'(x_0) 
+\]</div>
+<p>Ignoring specification of <span class="math notranslate nohighlight">\(x_0\)</span> and using Leibinz notation, we can write the product rule as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}(fg) = \frac{df}{dx}g + f\frac{dg}{dx}
+\]</div>
+</div>
+<div class="section" id="chain-rule">
+<h3>Chain Rule<a class="headerlink" href="#chain-rule" title="Permalink to this headline">#</a></h3>
+<p><strong>Theorem</strong> Let <span class="math notranslate nohighlight">\(f:(a,b)\to (c,d)\)</span> and <span class="math notranslate nohighlight">\(g:(c,d)\to \mathbb{R}\)</span> be functions. If <span class="math notranslate nohighlight">\(f\)</span> is differentiable at <span class="math notranslate nohighlight">\(x_0\in(a,b)\)</span> and <span class="math notranslate nohighlight">\(g\)</span> is differentiable at <span class="math notranslate nohighlight">\(f(x_0)\)</span>, then <span class="math notranslate nohighlight">\(g\circ f = g(f(x))\)</span> is differentiable at <span class="math notranslate nohighlight">\(x_0\)</span> with:</p>
+<div class="math notranslate nohighlight">
+\[
+(g\circ f)'(x_0) = g'(f(x_0))f'(x_0)
+\]</div>
+<p>Ignoring specification of <span class="math notranslate nohighlight">\(x_0\)</span> and using Leibinz notation we can write the chain rule as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}g(f(x)) = \frac{dg}{df}\frac{df}{dx}
+\]</div>
+</div>
+<div class="section" id="power-rule">
+<h3>Power Rule<a class="headerlink" href="#power-rule" title="Permalink to this headline">#</a></h3>
+<p>This one applies to <strong>only polynomials</strong> but is used so frequently I need to mention it.</p>
+<p><strong>Theorem</strong></p>
+<p>=)</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -429,11 +510,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../calc_2/diff_vs_int.html"
+       href="function_palooza.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Differentiation vs Integration</p>
+        <p class="prev-next-title">Function Palooza</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -446,6 +527,27 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-derivatives">Calculating Derivatives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity-of-the-derivative">Linearity of the Derivative</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#product-rule">Product Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">Chain Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-rule">Power Rule</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
