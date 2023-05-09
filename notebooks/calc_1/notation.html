@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notation &#8212; My sample book</title>
+    <title>Notation &#8212; Everything you Should Have Learned in Calculus</title>
   
   
   
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Real Numbers" href="real_numbers.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="../../intro.html" />
+    <link rel="prev" title="Everything you Should Have Learned in Calculus" href="../../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -152,7 +152,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Welcome to your Jupyter Book
+                    Everything you Should Have Learned in Calculus
                 </a>
             </li>
         </ul>
@@ -384,6 +384,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-important-sets">Some important sets:</a></li>
 </ul>
             </nav>
@@ -401,15 +402,19 @@ document.write(`
 <p>There are a few bits of notation that you need to know.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\in\)</span> means “belongs to the set” or “is in.” <span class="math notranslate nohighlight">\(a \in S\)</span> means that <span class="math notranslate nohighlight">\(a\)</span> is in the set <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\forall\)</span> means “for all” or “for every.” <span class="math notranslate nohighlight">\(\forall x \in S\)</span> means “for all <span class="math notranslate nohighlight">\(x\)</span> in the set <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\forall\)</span> means “for all” or “for every.” <span class="math notranslate nohighlight">\(\forall x \in S\)</span> means for all <span class="math notranslate nohighlight">\(x\)</span> in the set <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\exists\)</span> means “there exists”</p></li>
-<li><p><span class="math notranslate nohighlight">\(:=\)</span> and <span class="math notranslate nohighlight">\(\equiv\)</span> and mean “is defined as” or “is denoted.” Ex. <span class="math notranslate nohighlight">\(\vec{r}_{sep} \equiv \vec{r}_{obs} - \vec{r}_{source}\)</span> means “The separation vector is defined as the observation position vector minus the source position vector. (<span class="math notranslate nohighlight">\(\dot{=}\)</span> is also used for defining sometimes, I’m looking at you McIntyre)</p></li>
+<li><p><span class="math notranslate nohighlight">\(:=\)</span> and <span class="math notranslate nohighlight">\(\equiv\)</span> and mean “is defined as” or “is denoted.” Ex. <span class="math notranslate nohighlight">\(\vec{r}_{sep} \equiv \vec{r}_{obs} - \vec{r}_{source}\)</span> means “The separation vector is defined as the observation position vector minus the source position vector.” (<span class="math notranslate nohighlight">\(\dot{=}\)</span> is also used for defining sometimes, I’m looking at you McIntyre)</p></li>
 <li><p>Sets are usually defined within curly brackets <span class="math notranslate nohighlight">\(\{ \} \)</span>. <span class="math notranslate nohighlight">\(:\)</span> or <span class="math notranslate nohighlight">\(|\)</span> within these brackets typically means “satisfying” or “such that,” (such that is sometimes abbreviated to s.t.)</p></li>
 <li><p><span class="math notranslate nohighlight">\( E\subset S \)</span> means <span class="math notranslate nohighlight">\(E\)</span> is a subset of <span class="math notranslate nohighlight">\(S\)</span>, every element of <span class="math notranslate nohighlight">\(E\)</span> is also an element of <span class="math notranslate nohighlight">\(S\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f:A\to B\)</span> denotes a function that maps from the set <span class="math notranslate nohighlight">\(A\)</span> to the set <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\setminus\)</span> means “takeaway.” <span class="math notranslate nohighlight">\(A\setminus x\)</span> means <span class="math notranslate nohighlight">\(A\)</span> takeaway x, and is the set <span class="math notranslate nohighlight">\(A\)</span> with <span class="math notranslate nohighlight">\(x\)</span> removed.</p></li>
 </ul>
-<p><strong>Examples</strong></p>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
 <p>The <strong>union</strong> of sets <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is the set <span class="math notranslate nohighlight">\(A\cup B := \{x:x\in A \text{ or } x \in B  \} \)</span></p>
 <p>The <strong>Intersection</strong> of sets <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is the set <span class="math notranslate nohighlight">\(A\cap B := \{x:x\in A \text{ and } x \in B  \} \)</span></p>
+</div>
 <div class="section" id="some-important-sets">
 <h2>Some important sets:<a class="headerlink" href="#some-important-sets" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -460,7 +465,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        <p class="prev-next-title">Everything you Should Have Learned in Calculus</p>
       </div>
     </a>
     <a class="right-next"
@@ -490,6 +495,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-important-sets">Some important sets:</a></li>
 </ul>
   </nav></div>
@@ -505,7 +511,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Alia Valentine
 </p>
 
   </div>
