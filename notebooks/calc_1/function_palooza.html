@@ -59,6 +59,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/calc_1/function_palooza';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,7 +362,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -376,6 +380,29 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constants-and-polynomials">Constants and Polynomials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-valued-exponential">Real Valued Exponential</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-valued-exponential">Complex Valued Exponential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-log">Natural Log</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-log-rules">Properties (log rules)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponentials-of-a-different-base">Exponentials of a different base</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trig-functions">Trig Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic-trig-functions">Hyperbolic Trig Functions</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -387,6 +414,141 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="function-palooza">
 <h1>Function Palooza<a class="headerlink" href="#function-palooza" title="Permalink to this headline">#</a></h1>
+<p>In physics, there are a handful of functions that you should know by heart. I’ve outlined them (and their derivatives) here.</p>
+<div class="section" id="constants-and-polynomials">
+<h2>Constants and Polynomials<a class="headerlink" href="#constants-and-polynomials" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Derivative</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(a\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x^a\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(ax^{a-1}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}(7x^4 + 3x^{5/2} + x + 4) = 7\frac{d}{dx}x^4 + 3\frac{d}{dx}x^{5/2} \frac{d}{dx} x + \frac{d}{dx} 4 = 28x^3 + \frac{15}{2}x^{3/2} + 1
+\]</div>
+<p>By linearity of the derivative and the power rule.</p>
+</div>
+</div>
+<div class="section" id="real-valued-exponential">
+<h2>Real Valued Exponential<a class="headerlink" href="#real-valued-exponential" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Derivative</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(e^x\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^x\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>The exponential, denoted <span class="math notranslate nohighlight">\(e^x\)</span> or <span class="math notranslate nohighlight">\(\exp{(x)}\)</span> is probably the most important function in physics (I would argue in math in general as well). This is because it has the incredible property of being its own derivative.</p>
+<div class="section" id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}e^{-2x} = -2e^{-2x}
+\]</div>
+<p>By the chain rule. You should become very comfortable with this kind of derivative.</p>
+</div>
+</div>
+<div class="section" id="complex-valued-exponential">
+<h2>Complex Valued Exponential<a class="headerlink" href="#complex-valued-exponential" title="Permalink to this headline">#</a></h2>
+<p>Perhaps this isn’t the best time to introduce this, but its too important for me to leave out:</p>
+<div class="math notranslate nohighlight">
+\[
+e^{i\theta} = \cos(\theta) + i\sin(\theta)
+\]</div>
+<p>More generally:
+$<span class="math notranslate nohighlight">\(
+e^{x+iy} = e^x(\cos(y) + i\sin(y))
+\)</span>$</p>
+</div>
+<div class="section" id="natural-log">
+<h2>Natural Log<a class="headerlink" href="#natural-log" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Derivative</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\ln{(x)}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{x}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>The natural log is the inverse of the exponential, that is <span class="math notranslate nohighlight">\(\ln{(e^x)} = x\)</span> and <span class="math notranslate nohighlight">\(e^{\ln{(x)}} = x\)</span>. <span class="math notranslate nohighlight">\(\ln{(...)}\)</span> is often denoted by just <span class="math notranslate nohighlight">\(\log{(...)}\)</span>. Also, it is good to know that <span class="math notranslate nohighlight">\(\ln{(1)} = 0\)</span>.</p>
+<div class="section" id="properties-log-rules">
+<h3>Properties (log rules)<a class="headerlink" href="#properties-log-rules" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Log properties</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Powers</p></td>
+<td><p><span class="math notranslate nohighlight">\(\ln{(x^a)} = a\ln{(x)}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Products</p></td>
+<td><p><span class="math notranslate nohighlight">\(\ln{(xy)} = \ln{(x)} + \ln{(y)}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Division</p></td>
+<td><p><span class="math notranslate nohighlight">\(\ln{\frac{x}{y}} = \ln{(x)} - \ln{(y)}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="exponentials-of-a-different-base">
+<h3>Exponentials of a different base<a class="headerlink" href="#exponentials-of-a-different-base" title="Permalink to this headline">#</a></h3>
+<p>Now that we know <span class="math notranslate nohighlight">\(e^x\)</span> and <span class="math notranslate nohighlight">\(\ln{(x)}\)</span>, we can define exponentials of any base:</p>
+<div class="math notranslate nohighlight">
+\[
+a^x = e^{x\ln{(a)}}
+\]</div>
+</div>
+</div>
+<div class="section" id="trig-functions">
+<h2>Trig Functions<a class="headerlink" href="#trig-functions" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Derivative</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sin(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\cos(x)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cos(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\sin(x)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\tan(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{\cos^2(x)}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Recall that <span class="math notranslate nohighlight">\(\tan(x) := \frac{\sin(x)}{\cos(x)}\)</span>.</p>
+<p>The most important trig identity is: <span class="math notranslate nohighlight">\(\sin^2 (x) + \cos^2(x) = 1\)</span>.</p>
+</div>
+<div class="section" id="hyperbolic-trig-functions">
+<h2>Hyperbolic Trig Functions<a class="headerlink" href="#hyperbolic-trig-functions" title="Permalink to this headline">#</a></h2>
+<p>=)</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -447,6 +609,35 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constants-and-polynomials">Constants and Polynomials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-valued-exponential">Real Valued Exponential</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-valued-exponential">Complex Valued Exponential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-log">Natural Log</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-log-rules">Properties (log rules)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponentials-of-a-different-base">Exponentials of a different base</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trig-functions">Trig Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic-trig-functions">Hyperbolic Trig Functions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
