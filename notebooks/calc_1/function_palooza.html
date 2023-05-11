@@ -399,8 +399,23 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponentials-of-a-different-base">Exponentials of a different base</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trig-functions">Trig Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic-trig-functions">Hyperbolic Trig Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trig-functions">Trig Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-form">Exponential Form</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trig-functions">Inverse Trig functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic-trig-functions">Hyperbolic Trig Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exponential Form</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#even-and-odd-functions">Even and odd functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#even-or-odd">Even or odd?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-is-pronounced-oyluh-or-oyler-youler-is-a-common-mispronunciation">*Euler is pronounced oy·luh or oy·ler, you·ler is a common mispronunciation.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#again-arctan-x-is-multi-valued-so-one-must-be-careful-here">** again, <span class="math notranslate nohighlight">\(\arctan(x)\)</span> is multi valued, so one must be careful here.</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -472,6 +487,7 @@ document.write(`
 \[
 e^{i\theta} = \cos(\theta) + i\sin(\theta)
 \]</div>
+<p>This is called <strong>Euler’s Formula</strong>* .</p>
 <p>More generally:
 $<span class="math notranslate nohighlight">\(
 e^{x+iy} = e^x(\cos(y) + i\sin(y))
@@ -508,7 +524,7 @@ e^{x+iy} = e^x(\cos(y) + i\sin(y))
 <td><p><span class="math notranslate nohighlight">\(\ln{(xy)} = \ln{(x)} + \ln{(y)}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>Division</p></td>
-<td><p><span class="math notranslate nohighlight">\(\ln{\frac{x}{y}} = \ln{(x)} - \ln{(y)}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\ln{\left(\frac{x}{y}\right)} = \ln{(x)} - \ln{(y)}\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -543,11 +559,155 @@ a^x = e^{x\ln{(a)}}
 </tbody>
 </table>
 <p>Recall that <span class="math notranslate nohighlight">\(\tan(x) := \frac{\sin(x)}{\cos(x)}\)</span>.</p>
-<p>The most important trig identity is: <span class="math notranslate nohighlight">\(\sin^2 (x) + \cos^2(x) = 1\)</span>.</p>
+<p>The most important trig identity is: <span class="math notranslate nohighlight">\(\sin^2 (x) + \cos^2(x) = 1\)</span>. I won’t write other ones down since they are <a class="reference external" href="https://www.eeweb.com/tools/trigonometry-laws-and-identities-sheet/">easy to look up</a>.</p>
+<p><span class="math notranslate nohighlight">\(\sin(x)\)</span> and <span class="math notranslate nohighlight">\(\cos(x)\)</span> are <span class="math notranslate nohighlight">\(2\pi\)</span> periodic, so they repeat every <span class="math notranslate nohighlight">\(2\pi\)</span>. The function <span class="math notranslate nohighlight">\(\sin(\omega x)\)</span> then is <span class="math notranslate nohighlight">\(\frac{2\pi}{\omega}\)</span> periodic.</p>
+<div class="section" id="exponential-form">
+<h3>Exponential Form<a class="headerlink" href="#exponential-form" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Exp. Form</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cos(\theta)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{e^{i\theta} + e^{-i\theta}}{2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sin(\theta)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{e^{i\theta} - e^{-i\theta}}{2i}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="inverse-trig-functions">
+<h2>Inverse Trig functions<a class="headerlink" href="#inverse-trig-functions" title="Permalink to this headline">#</a></h2>
+<p>Here I favor the “arc” notation instead of <span class="math notranslate nohighlight">\(^{-1}\)</span> notation, since the latter can be confusing.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Derivative</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\arctan(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{1+x^2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\arcsin(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{\sqrt{1-x^2}}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\arccos(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\frac{1}{\sqrt{1-x^2}}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(\arctan\)</span> is probably the only one worth commiting to memory here. <span class="math notranslate nohighlight">\(\arctan\)</span> is technically a multi valued function, but almost always, you can assume that <span class="math notranslate nohighlight">\(\arctan(x)\)</span> will spit out a value in <span class="math notranslate nohighlight">\((\pi/2,\pi/2)\)</span>.</p>
 </div>
 <div class="section" id="hyperbolic-trig-functions">
 <h2>Hyperbolic Trig Functions<a class="headerlink" href="#hyperbolic-trig-functions" title="Permalink to this headline">#</a></h2>
-<p>=)</p>
+<p>These are less common, but still good to know as they do come up from time to time in physics.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Derivative</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sinh(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\cosh(x)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cosh(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sinh(x)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\tanh(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{\cosh^2(x)}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id2">
+<h3>Exponential Form<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Exp. Form</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cosh(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{e^x + e^{-x}}{2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sinh(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{e^x - e^{-x}}{2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\tanh(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{e^x - e^{-x}}{e^x + e^{-x}}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="even-and-odd-functions">
+<h2>Even and odd functions<a class="headerlink" href="#even-and-odd-functions" title="Permalink to this headline">#</a></h2>
+<p>Many, but not all functions can be classified as <strong>even</strong> or <strong>odd</strong>. I’ll define these properties now:</p>
+<p><strong>Def.</strong></p>
+<p><span class="math notranslate nohighlight">\(f\)</span> is <strong>even</strong> if <span class="math notranslate nohighlight">\(f(-x) = f(x)\)</span></p>
+<p><span class="math notranslate nohighlight">\(f\)</span> is <strong>odd</strong> if <span class="math notranslate nohighlight">\(f(-x) = -f(x)\)</span></p>
+<p>Here is a classic example of even and odd functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.05</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;even&#39;</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;odd&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b99531fb837cf791fa9c6af147dc5417b31bf166bc25c61dfa39cdfe041af335.png" src="../../_images/b99531fb837cf791fa9c6af147dc5417b31bf166bc25c61dfa39cdfe041af335.png" />
+</div>
+</div>
+<div class="section" id="even-or-odd">
+<h3>Even or odd?<a class="headerlink" href="#even-or-odd" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>even or odd</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sin(x)\)</span></p></td>
+<td><p>odd</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cos(x)\)</span></p></td>
+<td><p>even</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(x^n, n\)</span> even</p></td>
+<td><p>even</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x^n, n\)</span> odd</p></td>
+<td><p>odd</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cosh(x)\)</span></p></td>
+<td><p>even</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sinh(x)\)</span></p></td>
+<td><p>odd</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\tanh(x)\)</span></p></td>
+<td><p>odd</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\arctan(x)\)</span></p></td>
+<td><p>odd**</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="euler-is-pronounced-oyluh-or-oyler-youler-is-a-common-mispronunciation">
+<h4>*Euler is pronounced oy·luh or oy·ler, you·ler is a common mispronunciation.<a class="headerlink" href="#euler-is-pronounced-oyluh-or-oyler-youler-is-a-common-mispronunciation" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="again-arctan-x-is-multi-valued-so-one-must-be-careful-here">
+<h4>** again, <span class="math notranslate nohighlight">\(\arctan(x)\)</span> is multi valued, so one must be careful here.<a class="headerlink" href="#again-arctan-x-is-multi-valued-so-one-must-be-careful-here" title="Permalink to this headline">#</a></h4>
+</div>
+</div>
 </div>
 </div>
 
@@ -632,8 +792,23 @@ a^x = e^{x\ln{(a)}}
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponentials-of-a-different-base">Exponentials of a different base</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trig-functions">Trig Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic-trig-functions">Hyperbolic Trig Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trig-functions">Trig Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-form">Exponential Form</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trig-functions">Inverse Trig functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic-trig-functions">Hyperbolic Trig Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exponential Form</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#even-and-odd-functions">Even and odd functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#even-or-odd">Even or odd?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-is-pronounced-oyluh-or-oyler-youler-is-a-common-mispronunciation">*Euler is pronounced oy·luh or oy·ler, you·ler is a common mispronunciation.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#again-arctan-x-is-multi-valued-so-one-must-be-careful-here">** again, <span class="math notranslate nohighlight">\(\arctan(x)\)</span> is multi valued, so one must be careful here.</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
